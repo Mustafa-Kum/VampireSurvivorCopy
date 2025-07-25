@@ -1,0 +1,204 @@
+MODULARIZATION PREVIEW
+=====================
+
+Total functions found: 143
+
+controllers/InputController.js:
+-------------------------------
+  - createWaveKey
+  - handleMobileLayout
+  - handleTouchEnd
+  - handleTouchMove
+  - isTouchDevice
+  Total: 5 functions
+
+core/AudioManager.js:
+---------------------
+  - enableAudio
+  - playChainLightningSound
+  - playFireballSound
+  - playFrostboltSound
+  - playMedalSound
+  - playMusic
+  - playSelectSound
+  - playSlotSound
+  - playSound
+  Total: 9 functions
+
+core/Game.js:
+-------------
+  - assetLoaded
+  - gameOver
+  - handleTouchStart
+  - initEventListeners
+  - initPokiSDK
+  - initTouchControls
+  - loadAssetWithTimeout
+  - loadAssets
+  - loadGameAssets
+  - restartGame
+  - simulateLoading
+  - startGame
+  - updateGame
+  Total: 13 functions
+
+entities/Enemy.js:
+------------------
+  - createBossEnrageEffect
+  - drawBoss
+  - findNearestEnemy
+  - findNearestEnemyInRange
+  - handleEnemyHit
+  - spawnBoss
+  - spawnBossCheat
+  - spawnDoor
+  - spawnEnemies
+  - splitEnemy
+  - updateBoss
+  Total: 11 functions
+
+entities/Player.js:
+-------------------
+  - drawPlayer
+  - getPlayerMaxHealth
+  - handlePlayerHit
+  - resurrectPlayer
+  - shoot
+  - updatePlayerPosition
+  Total: 6 functions
+
+systems/CombatSystem.js:
+------------------------
+  - castChainLightning
+  - castFireball
+  - castFrostbolt
+  - checkChestCollision
+  - checkDoorCollision
+  - createDamageEffect
+  - handleCollisions
+  Total: 7 functions
+
+systems/ParticleSystem.js:
+--------------------------
+  - createDeathParticles
+  - createMedalParticles
+  - createParticle
+  - drawBulletParticles
+  - drawEnergyParticles
+  - drawParticles
+  - drawSparkParticles
+  - updateAllParticles
+  - updateBulletParticles
+  - updateParticleArray
+  - updateParticles
+  - updateSparkParticles
+  Total: 12 functions
+
+systems/UpgradeSystem.js:
+-------------------------
+  - applyPickupUpgrades
+  - applyUpgrade
+  - checkMedals
+  - earnMedal
+  - hideUpgradeScreen
+  - showUpgradeScreen
+  - updateLevelProgress
+  - updateUpgradesList
+  Total: 8 functions
+
+ui/Renderer.js:
+---------------
+  - drawBloodDrops
+  - drawBooks
+  - drawBullets
+  - drawChest
+  - drawCoreLayers
+  - drawDoor
+  - drawEnemies
+  - drawFireballs
+  - drawFrostbolts
+  - drawGlowEffect
+  - drawGround
+  - drawLightnings
+  - drawObjects
+  - drawPickups
+  - drawPlasmaRings
+  - drawSpiralArms
+  - resizeCanvas
+  Total: 17 functions
+
+utils/DisplayUtils.js:
+----------------------
+  - clearCanvas
+  - handleError
+  - hideSettings
+  - showError
+  - showFloatingText
+  - showJackpotScreen
+  - showSelectedSkill
+  - showSettings
+  - showToast
+  - showWaveInfo
+  - showWaveTransition
+  - stopMovement
+  - updateBloodDrops
+  - updateBooks
+  - updateBullets
+  - updateEnemies
+  - updateFPS
+  - updateFireballs
+  - updateFrostbolts
+  - updateLightnings
+  - updateMouseDirection
+  - updateObjects
+  - updatePickups
+  - updateTime
+  - updateVolume
+  Total: 25 functions
+
+utils/EffectUtils.js:
+---------------------
+  - createExplosionEffect
+  - createFrostExplosionEffect
+  - createLightningEffect
+  - createPortalEffect
+  - createSparkleEffect
+  - createSparkles
+  - createTeleportEffect
+  - createVictoryPattern
+  - generateLightningPoints
+  - getLighterColor
+  Total: 10 functions
+
+utils/MathUtils.js:
+-------------------
+  - calculateScoreRequirement
+  - generateRandomColor
+  - getRandomBrightColor
+  - hslToHex
+  - hslToRgb
+  - interpolateColor
+  - lerpRotation
+  - parseHSL
+  - rgbToString
+  Total: 9 functions
+
+utils/Misc.js:
+--------------
+  - 
+  - createBloodDrops
+  - dropLootChest
+  - findNextChainTargetInRange
+  - safePokiSDKCall
+  Total: 5 functions
+
+utils/PowerupUtils.js:
+----------------------
+  - applyTemporaryPowerup
+  - applyTripleFireballPower
+  - applyTripleFrostboltPower
+  - multiFireball
+  - multiFrostbolt
+  - resetCheats
+  Total: 6 functions
+

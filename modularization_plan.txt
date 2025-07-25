@@ -1,0 +1,127 @@
+NIGHTFALL WARRIORS - Modularization Plan
+
+1. CORE MODULES
+---------------
+/core/
+  - Game.js         // Main game instance and loop
+  - Constants.js    // Game constants and configurations
+  - AssetLoader.js  // Asset loading and management
+  - EventManager.js // Centralized event handling
+  - AudioManager.js // Audio system management
+
+2. GAME ENTITIES
+---------------
+/entities/
+  - Player.js       // Player class and related mechanics
+  - Enemy.js        // Base enemy class
+  - Boss.js         // Boss class extending Enemy
+  - Projectile.js   // Projectile management
+  - Pickup.js       // Pickup items and effects
+  - Portal.js       // Portal mechanics and effects
+
+3. SYSTEMS
+---------------
+/systems/
+  - CombatSystem.js      // Combat mechanics and calculations
+  - UpgradeSystem.js     // Upgrade management and progression
+  - CollisionSystem.js   // Collision detection and handling
+  - ParticleSystem.js    // Particle effects management
+  - PowerupSystem.js     // Power-up mechanics
+  - SpawnSystem.js       // Enemy and boss spawning logic
+
+4. UI COMPONENTS
+---------------
+/ui/
+  - UIManager.js         // Main UI coordination
+  - HUD.js              // In-game HUD elements
+  - UpgradeScreen.js    // Upgrade selection interface
+  - SettingsScreen.js   // Settings menu
+  - GameOverScreen.js   // Game over interface
+  - LoadingScreen.js    // Loading screen
+  - IntroScreen.js      // Introduction screen
+
+5. CONTROLLERS
+---------------
+/controllers/
+  - InputController.js   // Keyboard and mouse input
+  - TouchController.js   // Mobile touch controls
+  - JoystickController.js// Virtual joystick implementation
+  - CameraController.js  // Game camera management
+
+6. UTILITIES
+---------------
+/utils/
+  - MathUtils.js        // Math helper functions
+  - AnimationUtils.js   // Animation helper functions
+  - DebugUtils.js       // Debugging tools
+  - StorageUtils.js     // Local storage management
+  - TimeUtils.js        // Time management utilities
+
+7. STATE MANAGEMENT
+---------------
+/state/
+  - GameState.js        // Game state management
+  - PlayerState.js      // Player state tracking
+  - EnemyState.js       // Enemy state management
+  - ProgressState.js    // Game progress tracking
+
+8. EFFECTS
+---------------
+/effects/
+  - VisualEffects.js    // Visual effect implementations
+  - AudioEffects.js     // Sound effect management
+  - ParticleEffects.js  // Particle effect templates
+  - ScreenEffects.js    // Screen transition effects
+
+9. DATA
+---------------
+/data/
+  - UpgradeData.js      // Upgrade configurations
+  - EnemyData.js        // Enemy type definitions
+  - AudioData.js        // Audio asset definitions
+  - LevelData.js        // Level configurations
+
+10. SERVICES
+---------------
+/services/
+  - PokiService.js      // Poki SDK integration
+  - AnalyticsService.js // Game analytics
+  - SaveService.js      // Save/load functionality
+  - ScoreService.js     // Score management
+
+IMPLEMENTATION STEPS:
+-------------------
+1. Create basic module structure
+2. Move related code to appropriate modules
+3. Implement module interfaces
+4. Set up module dependencies
+5. Create build system
+6. Implement module testing
+7. Optimize and refine
+
+MODULE INTERACTION EXAMPLE:
+-------------------------
+Game.js (main loop)
+  ↓
+  ├── StateManager (controls game state)
+  │   ├── UIManager (manages UI updates)
+  │   ├── EntityManager (manages game entities)
+  │   └── SystemManager (manages game systems)
+  │
+  ├── InputController (handles user input)
+  │   └── Player (updates based on input)
+  │
+  ├── SpawnSystem (manages enemy creation)
+  │   └── Enemy (enemy instances)
+  │
+  └── RenderSystem (handles rendering)
+      ├── ParticleSystem (particle effects)
+      └── UIManager (UI rendering)
+
+This modularization will:
+- Improve code organization
+- Enhance maintainability
+- Enable easier testing
+- Allow for better scalability
+- Facilitate feature additions
+- Support multiple developers 

@@ -1,0 +1,17 @@
+{
+    "name": "nightfall-warriors",
+    "version": "1.0.0",
+    "description": "Nightfall Warriors Game",
+    "main": "core/Game.js",
+    "scripts": {
+        "build": "webpack --mode production",
+        "dev": "webpack serve --mode development"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "webpack": "^5.x.x",
+        "webpack-cli": "^4.x.x",
+        "css-loader": "^6.x.x",
+        "style-loader": "^3.x.x"
+    }
+}

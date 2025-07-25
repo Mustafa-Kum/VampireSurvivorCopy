@@ -1,0 +1,161 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Vampire Survivors</title>
+    <script async src="https://game-cdn.poki.com/scripts/v2/poki-sdk.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div id="game-container">
+    <div id="ui-overlay">
+        <div id="left-stats">
+            <div>💰 <span>Coins: </span><span id="coins">0</span></div>
+            <div>🏆 <span>Score: </span><span id="score" class="score-text">0</span></div>
+            <div>⌚ <span>Time: </span><span id="time" class="time-text">00:00</span></div>
+        </div>
+        <div id="star-container">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+        <div id="medal-container">
+            <div class="medal" data-time="60">🥉</div>
+            <div class="medal" data-time="180">🥈</div>
+            <div class="medal" data-time="300">🥇</div>
+        </div>
+        <div class="level-progress-bar">
+            <div id="level-progress" class="progress-fill"></div>
+            <div class="level-text">Level <span id="current-level">1</span></div>
+        </div>
+    </div>
+    <canvas id="game-canvas"></canvas>
+    <div id="intro-screen" class="intro-animation">
+        <div class="game-header">
+            <h1 class="game-title">NightFall Warrior</h1>
+            <p class="game-subtitle">Rise Through Darkness, Conquer The Night</p>
+        </div>
+        
+        <div class="play-section">
+            <button id="play-btn" class="button">PLAY NOW</button>
+            <div class="play-note">Press ESC for settings during game</div>
+        </div>
+    </div>
+
+    <div id="character-select-screen" class="character-select-screen">
+        <h2>Choose Your Character</h2>
+        <div class="character-select">
+            <button id="warrior-btn" class="character-btn active">
+                <div class="icon">⚔️</div>
+                <div class="title">Warrior</div>
+                <div class="stats">
+                    High HP<br>
+                    Melee Combat<br>
+                    Strong Defense
+                </div>
+            </button>
+            <button id="wizard-btn" class="character-btn">
+                <div class="icon">🧙‍♂️</div>
+                <div class="title">Wizard</div>
+                <div class="stats">
+                    Magic Spells<br>
+                    Area Damage<br>
+                    Chain Effects
+                </div>
+            </button>
+            <button id="archer-btn" class="character-btn">
+                <div class="icon">🏹</div>
+                <div class="title">Archer</div>
+                <div class="stats">
+                    Long Range<br>
+                    Fast Attack<br>
+                    High Mobility
+                </div>
+            </button>
+        </div>
+        <button id="start-game-btn" class="button">START GAME</button>
+    </div>
+    <div id="settings-screen">
+        <h2>Settings</h2>
+        <div class="slider-container">
+            <label for="music-volume">Music Volume:</label>
+            <input type="range" id="music-volume" min="0" max="100" value="66">
+        </div>
+        <div class="slider-container">
+            <label for="sfx-volume">SFX Volume:</label>
+            <input type="range" id="sfx-volume" min="0" max="100" value="75">
+        </div>
+        <div id="current-upgrades" style="display: none;">
+            <ul id="upgrades-list"></ul>
+        </div>
+        <h2>😈 Cheats 😈</h2>
+        <div class="cheat-item">
+            <label for="immortality">💀 Immortality:</label>
+            <input type="checkbox" id="immortality">
+        </div>
+        <div class="cheat-item">
+            <label for="health">❤️ Health:</label>
+            <input type="range" id="health" min="0" max="20" value="20">
+        </div>
+        <div id="cheat-upgrades"></div>
+        <button id="back-btn" class="button">Back</button>
+    </div>
+    <div id="game-over">
+        <h1 class="pulse-red">Game Over</h1>
+        <h2>Your Score: <span id="final-score"></span></h2>
+        <div id="upgrade-summary" style="text-align:center; margin-top:10px;">
+            <h3 style="margin-bottom: 0;">Upgrades Acquired</h3>
+            <ul id="upgrades-list" style="display: inline-block; text-align: left;"></ul>
+            <p>Bosses Killed: <span id="bosses-killed">0</span></p>
+        </div>
+        <button id="restart-btn" class="button">Resurrect</button>
+    </div>
+    <div id="upgrade-screen">
+        <h2>Choose an Upgrade</h2>
+        <div id="upgrade-cards-container"></div>
+    </div>
+    <div id="loading-screen">
+        <h2>Loading...</h2>
+        <div class="loader"></div>
+    </div>
+    <div id="settings-gear" style="display: none;"></div>
+
+    <div id="joystick-container">
+        <div id="joystick-base">
+            <div id="joystick-knob"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Core Dependencies -->
+<script src="core/Constants.js"></script>
+
+<!-- Utility Classes -->
+<script src="utils/MathUtils.js"></script>
+<script src="utils/Misc.js"></script>
+<script src="utils/DisplayUtils.js"></script>
+<script src="utils/EffectUtils.js"></script>
+<script src="utils/PowerupUtils.js"></script>
+
+<!-- Core Systems -->
+<script src="core/AudioManager.js"></script>
+<script src="core/GameObjectPools.js"></script>
+<script src="ui/Renderer.js"></script>
+
+<!-- Game Systems -->
+<script src="systems/ParticleSystem.js"></script>
+<script src="systems/UpgradeSystem.js"></script>
+<script src="systems/CombatSystem.js"></script>
+
+<!-- Controllers -->
+<script src="controllers/InputController.js"></script>
+
+<!-- Game Entities -->
+<script src="entities/Enemy.js"></script>
+<script src="entities/Player.js"></script>
+
+<!-- Main Game -->
+<script src="core/Game.js"></script>
+</body>
+</html>

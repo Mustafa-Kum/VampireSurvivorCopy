@@ -1,0 +1,152 @@
+NIGHTFALL WARRIORS - Game Structure Outline
+
+1. HTML STRUCTURE
+---------------
+- #game-container
+  |- #ui-overlay
+  |  |- #left-stats (Score & Time)
+  |  |- .level-progress-bar
+  |
+  |- #game-canvas
+  |- #intro-screen
+  |- #settings-screen
+  |- #game-over
+  |- #upgrade-screen
+  |- #loading-screen
+  |- #settings-gear
+  |- #error-screen
+  |- #joystick-container (mobile)
+
+2. GAME STATES
+---------------
+- Loading
+- Intro
+- Playing
+- Paused
+- Game Over
+- Upgrade Selection
+- Settings
+
+3. CORE GAME VARIABLES
+---------------
+- game {
+  score: number
+  level: number
+  player: PlayerObject
+  enemies: Array<Enemy>
+  projectiles: Array<Projectile>
+  pickups: Array<Pickup>
+  playerUpgrades: {
+    damage: number
+    speed: number
+    firerate: number
+    health: number
+  }
+  settings: {
+    musicVolume: number
+    sfxVolume: number
+  }
+}
+
+4. PLAYER MECHANICS
+---------------
+- Movement (WASD/Arrow keys/Joystick)
+- Shooting
+- Health System
+- Upgrade System
+- Collision Detection
+- Invulnerability Frames
+
+5. ENEMY SYSTEM
+---------------
+- Enemy Types
+- Spawn Patterns
+- Movement Patterns
+- Boss Mechanics
+- Drop System
+
+6. UPGRADE SYSTEM
+---------------
+- Upgrade Types:
+  - Damage
+  - Speed
+  - Fire Rate
+  - Health
+- Upgrade Selection UI
+- Upgrade Effects
+- Progressive Difficulty
+
+7. UI ELEMENTS
+---------------
+- Score Display
+- Time Display
+- Health Display
+- Level Progress Bar
+- Upgrade Cards
+- Settings Menu
+- Mobile Controls
+
+8. AUDIO SYSTEM
+---------------
+- Background Music
+- Sound Effects:
+  - Shooting
+  - Hit
+  - Pickup
+  - Death
+  - Level Up
+- Volume Controls
+
+9. CHEAT SYSTEM
+---------------
+- Immortality Toggle
+- Health Modification
+- Score Modification
+- Upgrade Level Control
+- Drop Rate Control
+- Boss Spawn
+
+10. MOBILE OPTIMIZATION
+---------------
+- Touch Controls
+- Joystick Implementation
+- Responsive UI
+- Performance Adjustments
+
+11. EVENT HANDLERS
+---------------
+- Key Events
+- Mouse Events
+- Touch Events
+- Window Resize
+- Game State Changes
+
+12. UTILITY FUNCTIONS
+---------------
+- updateScore()
+- updateHealth()
+- spawnEnemy()
+- spawnBoss()
+- createProjectile()
+- checkCollision()
+- handlePickup()
+- saveGameState()
+- loadGameState()
+- showError()
+
+13. ANIMATION SYSTEM
+---------------
+- Game Loop
+- Sprite Animations
+- UI Animations
+- Particle Effects
+- Screen Transitions
+
+14. SAVE/LOAD SYSTEM
+---------------
+- High Scores
+- Settings Storage
+- Game Progress
+- Upgrade Status
+
+This outline provides a high-level overview of the game's structure and components. Each section can be expanded further based on specific implementation details and requirements. 
